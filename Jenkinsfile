@@ -10,8 +10,8 @@ pipeline {
         stage('Sonarcan') {
              steps {
                  sh '''/var/jenkins_home/sonar-scanner/bin/sonar-scanner \
-                 -Dsonar.projectName=prueba-de-todo \
-                 -Dsonar.projectKey=prueba-de-todo \
+                 -Dsonar.projectName=actividad-grupal-grupo4 \
+                 -Dsonar.projectKey=actividad-grupal-grupo4 \
                  -Dsonar.projectVersion=1 \
                  -Dsonar.sources=src/main/java/ \
                  -Dsonar.language=java \
