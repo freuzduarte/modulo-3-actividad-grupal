@@ -50,7 +50,7 @@ pipeline {
                             nexusUrl: 'b405-179-60-65-173.ngrok-free.app',
                             groupId: pom.groupId,
                             version: pom.version,
-                            repository: 'actividadgrupal',
+                            repository: 'maven-releases',
                             credentialsId: 'adminnexuspatricio',
                             artifacts: [
                                 [artifactId: pom.artifactId,
