@@ -70,7 +70,7 @@ pipeline {
         failure {
             script {
                 echo 'Esto es un mensaje de fallo'
-                slackSend(channel: '#actividad-grupal-jenkinsfile', message: " Proyecto Creado Perfectamente *${currentBuild.currentResult}:* build ${env.BUILD_NUMBER}, ${env.JOB_NAME}", color: '#00FF04')
+                slackSend(channel: '#actividad-grupal-jenkinsfile', message: " Fallo al compilar proyecto 😢*${currentBuild.currentResult}:* build ${env.BUILD_NUMBER}, ${env.JOB_NAME}", color: '#ff0000')
             }
         }
     }
