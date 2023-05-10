@@ -1,3 +1,4 @@
+/* groovylint-disable LineLength, NestedBlockDepth */
 pipeline {
     agent any
         stages {
@@ -41,7 +42,7 @@ pipeline {
                     }
                 }
         }
-        stage('Publish to Nexus Repository Manager') {
+        stage('Pubicar al repositorio de NEXUS') {
             steps {
                 script {
                     pom = readMavenPom file: 'pom.xml'
@@ -53,11 +54,11 @@ pipeline {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}"
                         nexusArtifactUploader(
                             nexusVersion: 'nexus3',
-                            protocol: 'http',
-                            nexusUrl: '192.168.26.129:8081',
+                            protocol: 'https',
+                            nexusUrl: '2752-152-231-122-87.ngrok-free.app',
                             groupId: pom.groupId,
                             version: pom.version,
-                            repository: 'm3pj6',
+                            repository: 'actividadgrupal',
                             credentialsId: 'admin',
                             artifacts: [
                                 [artifactId: pom.artifactId,
