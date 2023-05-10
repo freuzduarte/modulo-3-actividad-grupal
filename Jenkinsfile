@@ -6,6 +6,20 @@ pipeline {
                 echo 'Comenzando el Proyecto'
             }
         }
+        stage('Build') {
+                steps {
+                    script {
+                        sh 'mvn -B package'
+                    }
+                }
+            }
+        stage('Test') {
+                steps {
+                    script {
+                        sh 'mvn clean verify'
+                    }
+                }
+            }
         }
     post {
         failure {
